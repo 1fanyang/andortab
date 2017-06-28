@@ -224,7 +224,32 @@ public class IteGraph {
 				mnode.addAll(mexp);
 				explanations.put(mnode, newexp);
 			}
-		}		
+		}
+		Iterator it1 = explanations.keySet().iterator();
+		ArrayList<Set<PropositionalFormula>> toDelete = new ArrayList<Set<PropositionalFormula>>();
+
+		while(it1.hasNext()){
+			Set<PropositionalFormula> m1 = (Set<PropositionalFormula>)it1.next();
+			Set<PropositionalFormula> e1 = explanations.get(m1).getLiterals();
+			Iterator it2 = explanations.keySet().iterator();
+			while(it2.hasNext()){
+				Set<PropositionalFormula> m2 = (Set<PropositionalFormula>)it2.next();
+				Set<PropositionalFormula> e2 = explanations.get(m2).getLiterals();
+				if(!(e1.containsAll(e2) && e2.containsAll(e1))){
+					if(e1.containsAll(e2) && !toDelete.contains(m1)){
+						// delete e1
+						toDelete.add(m1);
+					}else if(e2.containsAll(e1) && !toDelete.contains(m2)){
+						// delete e2
+						toDelete.add(m2);
+					}
+				}
+			}
+		}
+		for (Set<PropositionalFormula> k : toDelete){
+			explanations.remove(k);
+		}
+
 	}
 
 

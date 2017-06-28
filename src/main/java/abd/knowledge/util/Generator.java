@@ -58,9 +58,9 @@ public class Generator {
 		    		  boolean sign= randomGenerator.nextBoolean(); 
 		    		  boolean connector;
 	    			  if(sign)
-	    				  writer.write("p"+var + " " );
+	    				  writer.write("p" + var + " " );
 	    			  else
-	    				  writer.write("!p"+var +" ");
+	    				  writer.write("!p"+ var + " ");
 		    		  if(i!=length-1){
 		    			  connector =  randomGenerator.nextBoolean(); 
 //		    			  if(connector)

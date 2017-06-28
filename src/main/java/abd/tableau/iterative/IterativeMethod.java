@@ -144,7 +144,7 @@ public class IterativeMethod {
 		andortab.startExpansion();
 	
 	//	andortab.generateExplanation();
-	//	
+
 
 		double nb_node = andortab.getTableauSize();
 		// Get elapsed time in milliseconds
@@ -158,8 +158,6 @@ public class IterativeMethod {
 		//float elapsedTimeSec = elapsedTimeMillis/1000F;
 		double elapsedTimeSec = elapsedTimeMillis/1000000F;
 		System.out.println("elapsedTimeMillis " +elapsedTimeSec);
-		PropositionalFormula negobs =(PropositionalFormula)obs.complement();
-		int ind=0;
 		if(explanation.isEmpty()){
 			System.out.println("no explanations");
 		}else{
@@ -167,8 +165,6 @@ public class IterativeMethod {
 		
 			while(it_exp.hasNext()){
 				PropositionalFormula hypo = it_exp.next();
-				ind++;
-				if(ind!=2)
 				System.out.println("explanation is: "+ hypo);
 			}
 		}

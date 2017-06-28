@@ -25,13 +25,16 @@ package abd.knowledge.util;
 
 import java.io.*;      // IO specific classes (File, Stream,..)
 import java.util.*;    // Java util
+import net.sf.tweety.logics.pl.syntax.PropositionalFormula;
+import net.sf.tweety.logics.pl.parser.PlParser;
+
 
 //import theoremprover.*;
 //import utils.SortedIntList;
 
 public class TestMinHittingSets {
 
-
+    protected static PlParser parser = new PlParser();
     public static void main(String[] args) {
 
         TestMinHittingSets inst = new TestMinHittingSets();
@@ -39,6 +42,7 @@ public class TestMinHittingSets {
     }
 
     void createConflictSets(ArrayList conflictSets, long seed) {
+
         SortedIntList cs = new SortedIntList();
         cs.addSorted(2);
         cs.addSorted(4);

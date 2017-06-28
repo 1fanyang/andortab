@@ -739,7 +739,8 @@ public class MinHittingSet {
 
             // compute H(n) for the new node
 
-        	// modify yifan
+        	// modified by yifan
+            // todo overloading
             //newEdge = ((Integer)itLabel.next()).intValue();            
             newEdge = ((PropositionalFormula)itLabel.next());        
             
